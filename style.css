@@ -3,9 +3,9 @@ body{
     padding: 5rem 0 5rem 0;
     width: 100%;
     font-size: 10px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Playwrite US Modern", serif;
     height: 100%;
-    background-color: #87A878;
+    background-color: darkgreen;
 }
 
 .page{
@@ -23,7 +23,7 @@ h1{
     text-shadow: 2px 2px 2px;
     margin: 10rem 5rem 5rem 0;
     padding: 0 0 0 0;
-    color:#DBF9B8;
+    color: darkred;
     line-height: 3rem;
 }
 
@@ -31,7 +31,7 @@ h1{
     margin: 6rem 0 0 0;
     font-size: 6rem;
     font-weight: 300;
-    color: #4b4d49 ;
+    color: gold ;
 }
 
 span{
@@ -44,7 +44,7 @@ span{
 i{
     font-style: normal;
     font-size: 1rem;
-    color:#4b4d49;
+    color: gold;
 } 
 
 

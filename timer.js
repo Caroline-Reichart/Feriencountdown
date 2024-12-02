@@ -1,12 +1,12 @@
-var ReleaseDate = new Date("jul 26, 2024 15:00:00").getTime();
-var TimerFunction = setInterval(function() {
-    var DatumHeute = new Date().getTime();
-    var Differenz = ReleaseDate - DatumHeute;
+const ReleaseDate = new Date("dec 20, 2024 13:30:00").getTime();
+const TimerFunction = setInterval(function() {
+    let DatumHeute = new Date().getTime();
+    let Differenz = ReleaseDate - DatumHeute;
 
-    var d = Math.floor(Differenz / (1000 * 60 * 60 * 24));
-    var h = Math.floor((Differenz % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var m = Math.floor((Differenz % (1000 * 60 * 60)) / (1000 * 60));
-    var s = Math.floor((Differenz % (1000 * 60)) / 1000);
+    let d = Math.floor(Differenz / (1000 * 60 * 60 * 24));
+    let h = Math.floor((Differenz % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let m = Math.floor((Differenz % (1000 * 60 * 60)) / (1000 * 60));
+    let s = Math.floor((Differenz % (1000 * 60)) / 1000);
     
 document.getElementById("timer").innerHTML =  
 "<span>" + 
