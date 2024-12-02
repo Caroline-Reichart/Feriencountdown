@@ -1,28 +1,24 @@
-const ReleaseDate = new Date("dec 20, 2024 13:30:00").getTime();
-const TimerFunction = setInterval(function() {
-    let DatumHeute = new Date().getTime();
-    let Differenz = ReleaseDate - DatumHeute;
+const releaseDate = new Date("Dec 20, 2024 13:30:00").getTime();
 
-    let d = Math.floor(Differenz / (1000 * 60 * 60 * 24));
-    let h = Math.floor((Differenz % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let m = Math.floor((Differenz % (1000 * 60 * 60)) / (1000 * 60));
-    let s = Math.floor((Differenz % (1000 * 60)) / 1000);
-    
-document.getElementById("timer").innerHTML =  
-"<span>" + 
-d +
-"<br><i>Tage</i></span><span>" + 
-h + 
-"<br><i>Stunden</i></span><span>" + 
-m + 
-"<br><i>Minuten</i></span><span>" + 
-s + 
-"<br><i>Sekunden</i></span>";
+const timerFunction = setInterval(() => {
+    const now = new Date().getTime();
+    const diff = releaseDate - now;
 
-if (Differenz < 0) {
-        clearInterval(TimerFunction);
-        document.getElementById("timer").innerHTML = "Ferien"; 
-    } 
+    if (diff < 0) {
+        clearInterval(timerFunction);
+        document.getElementById("timer").innerHTML = "Ferien";
+        return;
+    }
 
-}, 1000) 
+    const timeUnits = [
+        { unit: "Tage", value: Math.floor(diff / (1000 * 60 * 60 * 24)) },
+        { unit: "Stunden", value: Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) },
+        { unit: "Minuten", value: Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)) },
+        { unit: "Sekunden", value: Math.floor((diff % (1000 * 60)) / 1000) }
+    ];
+
+    document.getElementById("timer").innerHTML = timeUnits
+        .map(({ unit, value }) => `<span>${value}<br><i>${unit}</i></span>`)
+        .join("");
+}, 1000);
 
